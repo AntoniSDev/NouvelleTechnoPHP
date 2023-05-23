@@ -7,39 +7,38 @@
     <title>Document</title>
 </head>
 <body>
+
     <?php
-            
-        /**
-         * add
-         *
-         * @param  mixed $nb1
-         * @param  mixed $nb2
-         * @return void
-         */
-        function add($nb1, $nb2){
-            return $nb1 + $nb2;
+      //question
+      $answer = true;
+      if($answer){
+        echo "yes";       
+      } 
+      else{
+        echo "no";
+      } 
+      // comparison
+      // ==  compare value
+      // === compare value and type
+      // < >= ! 
+      
+      
+      
+      // combinator <=>
+      $a = 17;
+      $b = 14;
+      // switch       
+        switch($a <=> $b){
+            case -1:
+                echo "A inferior to B";
+                break;
+            case 0:
+                echo "A is qual to B";
+                break;  
+            case 1:
+                echo "A superior to B";
         }
-        
-        /**
-         * hi
-         *
-         * @param  mixed $hello
-         * @param  mixed $first_name
-         * @param  mixed $last_name
-         * @return void
-         */
-        function hi($hello, $first_name, $last_name){
-            echo "$hello $first_name $last_name";
-        }
-    
-        $total = add(18, 8);
-        var_dump($total);
-    ?>
+    ?>  
 
-    <p><?php echo add(12, 52); ?></p>
-    <p><?php echo add(2, 5); ?></p>
-    <p><?php echo add(72, 9); ?></p>
-
-    <h1><?php hi("greetings", "mike", "kel")?></h1>
 </body>
 </html>
