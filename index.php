@@ -7,29 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-
-    <!--Method Get : public  
-    Method POST : private-->
+    <?php
+            
+        /**
+         * add
+         *
+         * @param  mixed $nb1
+         * @param  mixed $nb2
+         * @return void
+         */
+        function add($nb1, $nb2){
+            return $nb1 + $nb2;
+        }
+        
+        /**
+         * hi
+         *
+         * @param  mixed $hello
+         * @param  mixed $first_name
+         * @param  mixed $last_name
+         * @return void
+         */
+        function hi($hello, $first_name, $last_name){
+            echo "$hello $first_name $last_name";
+        }
     
-    <form method="get">
-        <div>
-            <label for="number1">Number 1 :</label>
-            <input type="number" id="number1" name="nb1">
-        </div>
-          <div>
-            <label for="number2">Number 2 :</label>
-            <input type="number" id="number2" name="nb2">
-        </div>
-        <button type="submit">Calculer</button>
-    </form>    
+        $total = add(18, 8);
+        var_dump($total);
+    ?>
 
-<?php 
-    //echo "<pre>";
-    //var_dump($_GET["nb1"]);
-    //echo "<pre>";
-    $total = $_GET["nb1"] + $_GET["nb2"];
-    echo "<p>Total : $total </p>"
-?>
+    <p><?php echo add(12, 52); ?></p>
+    <p><?php echo add(2, 5); ?></p>
+    <p><?php echo add(72, 9); ?></p>
 
+    <h1><?php hi("greetings", "mike", "kel")?></h1>
 </body>
 </html>
