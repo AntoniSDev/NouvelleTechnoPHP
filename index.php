@@ -1,27 +1,51 @@
-<?php  
-    // include functions file
-    include_once "includes/functions.php";
-    
-    //require is doing fatal error if problem
-    //require_once can be used only one time
+<?php
+// include functions file
+include_once "includes/functions.php";
 
-    // define title
-$title ="Main Page";
+//require is doing fatal error if problem
+//require_once can be used only one time
 
-   // Include files
-   // @Include to hide errors
-   // include_once is better to avoid errors
+// define title
+$title = "Main Page";
 
-   include "includes/header.php";   
-   include "includes/navbar.php";
+// Include files
+// @Include to hide errors
+// include_once is better to avoid errors
 
-    //page content
-    ?>
+include "includes/header.php";
+include "includes/navbar.php";
 
-    <p>Main page content</p>
+//page content
+?>
 
-    <?php
-    verifForm();
-   include "includes/footer.php";
+<p>Main page content</p>
+
+<?php
+// include connect
+require_once "includes/connect.php";
+
+$username = "admin";
+$pass = "lolpass";
+
+$sql = "SELECT * FROM users WHERE username =:username AND pass=:pass";
+
+// PREPARE request
+$requete = $db->prepare($sql);
+
+// INJECT VALUES "bindvalue"
+$requete->bindvalue(":username", $username, PDO::PARAM_STR);
+$requete->bindvalue(":pass", $pass, PDO::PARAM_STR);
 
 
+// execute request
+$requete->execute();
+
+
+$user = $requete->fetchAll();
+
+echo"<pre>";
+var_dump($user);
+echo"</pre>";
+
+//include footer
+include "includes/footer.php";
