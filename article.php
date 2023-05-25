@@ -1,5 +1,6 @@
 <?php
-
+  //opening php session
+  session_start();
 
 //check if id 
 if(!isset($_GET["id"]) || empty($_GET["id"])){

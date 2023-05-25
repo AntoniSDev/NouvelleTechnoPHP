@@ -1,4 +1,6 @@
 <?php
+  //opening php session
+  session_start();
 // see all articles in db
 //connect to DB
 require_once "includes/connect.php";

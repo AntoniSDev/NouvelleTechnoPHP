@@ -1,4 +1,12 @@
 <?php
+  //opening php session
+  session_start();
+
+  if(!isset($_SESSION["user"])){
+    header("Location: connexion.php");  
+    exit; 
+};
+
 // include functions file
 include_once "includes/functions.php";
 

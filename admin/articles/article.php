@@ -1,4 +1,6 @@
 <?php
+  //opening php session
+  session_start();
 
 //form
 if(!empty($_POST)){

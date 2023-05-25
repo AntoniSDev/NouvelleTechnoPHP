@@ -1,4 +1,11 @@
 <?php
+  //opening php session
+  session_start();
+ 
+if(isset($_SESSION["user"])){
+    header("Location: user.php");  
+    exit; 
+};
 
 //checking if form is sent
 if(!empty($_POST)){
@@ -38,8 +45,7 @@ if(!empty($_POST)){
 
       //user and password ok
       //connecting user 
-      //opening php session
-      session_start();
+
 
 
       //inject user info in $_SESSION
