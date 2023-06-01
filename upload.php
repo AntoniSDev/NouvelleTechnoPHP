@@ -77,6 +77,7 @@ if (isset($_FILES["image"]) && $_FILES["image"]["error"] === 0) {
         }      
 
         //644 to forbidden files from execution, can be changed for other permissions
+        chmod($newfilename, 0644);
         
             //upload image to db
             //$req = $db->prepare('INSERT INTO tablename (tablecolumn) VALUES (?)');
